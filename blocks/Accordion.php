@@ -35,7 +35,7 @@ class Accordion extends Basic {
             return "";
         }
 
-        $output = '<div class="custom-accordion">';
+        $output = '<div class="custom-accordion custom-settings">';
         foreach ($attributes["items"] as $item) {
             $output .= $this->renderSubItem($item);
         }

@@ -47,7 +47,7 @@ class Versus extends Basic {
 
         $header = array_shift($attributes['items']);
 
-        $output = '<div class="custom-versus"><table class="versus-table"><thead>';
+        $output = '<div class="custom-versus custom-settings"><table class="versus-table"><thead>';
 
         $output .= $this->renderSubItem($header);
 
