@@ -46,7 +46,7 @@ function twentytwentyfive_child_customize_register( $wp_customize ) {
 
 }
 function twentytwentyfive_child_customize_live_preview() {
-    wp_enqueue_script( 'twentytwentyfive-child-custom-color', get_theme_file_uri( '/dist/js/customizer.js' ), array( 'customize-preview' ), null, );
+    wp_enqueue_script( 'twentytwentyfive-child-custom-color', get_theme_file_uri( '/dist/js/customizer.js' ), array( 'customize-preview' ), filemtime(get_stylesheet_directory() . "/dist/js/customizer.js") );
 }
 function twentytwentyfive_child_custom_dynamic_styles() {
 

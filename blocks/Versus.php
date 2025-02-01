@@ -68,7 +68,7 @@ class Versus extends Basic {
             '<tr>
                 <td><strong>%s</strong></td>
                 <td><strong><i class="%s"></i> %s</strong></td>
-                <td><strong>VS</strong></td>
+                <td><strong>'.__('VS','custom-blocks').'</strong></td>
                 <td><strong><i class="%s"></i> %s</strong></td>
             </tr>',
             esc_html($comparison['label'] ?? ''),
