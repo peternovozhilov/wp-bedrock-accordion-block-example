@@ -1,5 +1,11 @@
+$border-color: #ddd;
+$background-color: #f7f7f7;
+$highlight-color: #eaeaea;
+$primary-color: #007cba;
+$content-bg-color: #fafafa;
+
 .custom-accordion {
-  border: 1px solid #ddd;
+  border: 1px solid $border-color;
   border-radius: 5px;
   padding: 10px;
   width: 100%;
@@ -15,16 +21,16 @@
   .accordion-title {
     display: block;
     position: relative;
-    background-color: #f7f7f7;
+    background-color: $background-color;
     padding: 15px;
     font-weight: bold;
     cursor: pointer;
-    border: 1px solid #ccc;
+    border: 1px solid lighten($border-color, 10%);
     border-radius: 5px;
     transition: background 0.3s ease-in-out;
 
     &:hover {
-      background-color: #eaeaea;
+      background-color: $highlight-color;
     }
 
     &::after {
@@ -34,17 +40,15 @@
       position: absolute;
       right: 8px;
     }
-
   }
 
   .accordion-content {
     display: none;
     padding: 10px;
-    border-left: 2px solid #007cba;
+    border-left: 2px solid $primary-color;
     margin-top: 5px;
-    background: #fafafa;
+    background: $content-bg-color;
     box-sizing: border-box;
-
   }
 
   .accordion-toggle:checked ~ .accordion-content {

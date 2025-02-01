@@ -1,0 +1,110 @@
+$primary-color: #0073aa;
+$secondary-color: #f9f9f9;
+$border-color: #ddd;
+$text-color: #333;
+
+.custom-versus {
+  border: 1px solid $border-color;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 5px;
+  overflow: auto;
+
+  .versus-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+
+    thead {
+      background: $primary-color;
+      color: #ffffff;
+
+      th {
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background: lighten($secondary-color, 5%);
+        }
+
+        td {
+          padding: 12px;
+          border: 1px solid $border-color;
+          font-size: 14px;
+          background: $secondary-color;
+
+          i {
+            margin-right: 5px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Editor Styles */
+.wp-block-custom-versus {
+  .versus-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+  }
+
+  .versus-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    background: $secondary-color;
+
+    select, input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid darken($border-color, 10%);
+      border-radius: 4px;
+    }
+
+    button {
+      background: darken($primary-color, 10%);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+
+      &:hover {
+        background: darken($primary-color, 15%);
+      }
+    }
+  }
+
+  .add-versus-item {
+    background: $primary-color;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+  }
+}

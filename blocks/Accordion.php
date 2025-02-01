@@ -2,37 +2,17 @@
 
 namespace TwentytwentyfiveChild\Blocks;
 
-class Accordion {
+class Accordion extends Basic {
+
+    protected string $dir = 'accordion';
 
     public function __construct() {
         add_action("init", [$this, "registerBlock"]);
     }
 
-    private function registerAssets(): void {
-        wp_register_script(
-            "custom-accordion-editor-script",
-            get_stylesheet_directory_uri() . "/dist/js/accordion-editor.js",
-            ["wp-blocks", "wp-element", "wp-editor", "wp-components", "wp-i18n"],
-            filemtime(get_stylesheet_directory() . "/dist/js/accordion-editor.js")
-        );
+    public function registerBlock($callback = null): void {
 
-        wp_register_style(
-            "custom-accordion-editor-style",
-            get_stylesheet_directory_uri() . "/dist/css/accordion-editor.css",
-            [],
-            filemtime(get_stylesheet_directory() . "/dist/css/accordion-editor.css")
-        );
-
-        wp_register_style(
-            "custom-accordion-style",
-            get_stylesheet_directory_uri() . "/dist/css/accordion-style.css",
-            [],
-            filemtime(get_stylesheet_directory() . "/dist/css/accordion-style.css")
-        );
-    }
-
-    public function registerBlock(): void {
-        $this->registerAssets();
+        parent::registerBlock();
 
         register_block_type("custom/accordion", [
             "editor_script"   => "custom-accordion-editor-script",

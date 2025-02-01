@@ -4,6 +4,7 @@
   var Button = wp.components.Button;
   var TextControl = wp.components.TextControl;
   var __ = wp.i18n.__;
+  var createElement = wp.element.createElement;
 
   registerBlockType("custom/accordion", {
     title: __("Accordion", "custom-blocks"),
@@ -13,7 +14,7 @@
     attributes: {
       items: {
         type: "array",
-        default: [{ title: "New Accordion Item", content: "New content" }],
+        default: [{ title: __("New Accordion Item"), content: __("New content") }],
       },
     },
     edit: function (props) {
@@ -69,43 +70,43 @@
 
       // Function to add a new item
       var addItem = function () {
-        var newItems = [...attributes.items, { title: "New Accordion Item", content: "New content" }];
+        var newItems = [...attributes.items, { title: __("New Accordion Item", "custom-blocks"), content: __("New content", "custom-blocks") }];
         setAttributes({ items: newItems });
       };
 
-      return wp.element.createElement(
+      return createElement(
         "div",
         Object.assign({}, blockProps, { className: "custom-accordion-editor" }),
+        createElement("h3", {}, __("Accordion Component", "custom-blocks")),
         attributes.items.map((item, index) =>
-          wp.element.createElement(
+          createElement(
             "div",
             { className: "accordion-item", key: index },
 
             // Editable Accordion Title
-            wp.element.createElement(TextControl, {
-              label: __("Title", "custom-blocks"),
+            createElement(TextControl, {
               value: item.title,
               onChange: (newTitle) => updateItem(index, "title", newTitle),
-              onFocus: clearDefaultText(index, "title", "New Accordion Item"),
+              onFocus: clearDefaultText(index, "title", __("New Accordion Item", "custom-blocks")),
               placeholder: __("Enter accordion title...", "custom-blocks"),
             }),
 
             // Editable Accordion Content (Textarea)
-            wp.element.createElement("textarea", {
+            createElement("textarea", {
               className: "accordion-content-editor",
               value: item.content,
               onChange: (event) => updateItem(index, "content", event.target.value),
-              onFocus: clearDefaultText(index, "content", "New content"),
+              onFocus: clearDefaultText(index, "content", __("New content","custom-blocks")),
               placeholder: __("Enter accordion content...", "custom-blocks"),
               rows: 3,
             }),
 
             // Buttons in One Line
-            wp.element.createElement(
+            createElement(
               "div",
               { className: "accordion-controls" },
               index > 0 &&
-              wp.element.createElement(
+              createElement(
                 Button,
                 {
                   variant: "secondary",
@@ -116,7 +117,7 @@
               ),
 
               index < attributes.items.length - 1 &&
-              wp.element.createElement(
+              createElement(
                 Button,
                 {
                   variant: "secondary",
@@ -126,7 +127,7 @@
                 __("▼", "custom-blocks") // Unicode for Down Arrow
               ),
 
-              wp.element.createElement(
+              createElement(
                 Button,
                 {
                   variant: "destructive",
@@ -140,7 +141,7 @@
         ),
 
         // Add Button
-        wp.element.createElement(
+        createElement(
           Button,
           {
             variant: "primary",
