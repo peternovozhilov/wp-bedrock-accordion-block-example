@@ -1,12 +1,12 @@
 # TwentyTwentyFive Child Theme with custom blocks for Gutenberg
 
-This repository contains the definition of a **TwentyTwentyFive Child Theme** with various custom **Accordion/Versus Blocks** for the **Gutenberg Editor**. It is designed for **WordPress 6.7.1** running on **WP Bedrock**.
+This repository contains the definition of a **TwentyTwentyFive Child Theme** with various custom **FAQ Accordion/Versus Blocks** for the **Gutenberg Editor**. It is designed for **WordPress 6.7.1** running on **WP Bedrock**.
 
 ---
 
 ## Features
 
-- **Custom Accordion/Versus Blocks**:
+- **Custom FAQ Accordion/Versus Blocks**:
   - Built specifically for the Gutenberg Editor.
   - Fully customizable with multiple items.
   - Smooth animations for opening/closing.
@@ -45,10 +45,10 @@ Created by **Peter Novozhilov** to demonstrate:
 ## Screenshots
 
 ### Frontend View:
-![Accordion/Versus Blocks Screenshot](screenshot.png)  
+![FAQ Accordion/Versus Blocks Screenshot](screenshot.png)  
 View full-size: [screenshot.png](./screenshot.png)
 
 ### Admin Editor View:
-![Accordion/Versus Blocks Editor](screenshot-admin.png)  
+![FAQ Accordion/Versus Blocks Editor](screenshot-admin.png)  
 View full-size: [screenshot-admin.png](./screenshot-admin.png)
 

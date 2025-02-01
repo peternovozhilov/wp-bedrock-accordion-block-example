@@ -7,7 +7,7 @@
   var createElement = wp.element.createElement;
 
   registerBlockType("custom/accordion", {
-    title: __("Accordion", "custom-blocks"),
+    title: __("FAQ accordion", "custom-blocks"),
     description: __("A collapsible accordion block with ordered sub-items.", "custom-blocks"),
     category: "design",
     icon: "menu-alt3",
@@ -71,7 +71,7 @@
       return createElement(
         "div",
         Object.assign({}, blockProps, { className: "custom-accordion-editor" }),
-        createElement("h3", {}, __("Accordion Component", "custom-blocks")),
+        createElement("h3", {}, __("FAQ accordion", "custom-blocks")),
         attributes.items.map((item, index) =>
           createElement(
             "div",

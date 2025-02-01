@@ -5,6 +5,7 @@
   padding: 10px;
   margin-bottom: 10px;
 
+
   .versus-row {
 
     border: 1px solid #ccc;
@@ -13,6 +14,11 @@
     background: #fff;
 
     .icon-feature-group {
+
+      .text-center {
+        text-align: center;
+        font-weight: bold;
+      }
 
       textarea {
         box-sizing: border-box;

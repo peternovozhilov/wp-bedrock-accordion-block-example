@@ -15,6 +15,7 @@
         type: "array",
         default: [
           {
+            label: __("Property", "custom-blocks"),
             leftIcon: "fas fa-check",
             leftText: __("Feature A", "custom-blocks"),
             rightIcon: "fas fa-times",
@@ -85,6 +86,7 @@
 
       function addComparison() {
         var newItems = attributes.items.concat({
+          label: __("Property", "custom-blocks"),
           leftIcon: "fas fa-check",
           leftText: __("Feature A", "custom-blocks"),
           rightIcon: "fas fa-times",
@@ -108,6 +110,14 @@
             "div",
             { className: "versus-row", key: index },
             createElement("div", { className: "icon-feature-group" },
+              createElement("textarea", {
+                value: comp.label,
+                onChange: event => updateComparison(index, "label", event.target.value),
+                onFocus: event => handleFocus(event, __("Property", "custom-blocks")),
+                className: "feature-textarea"
+              })
+            ),
+            createElement("div", { className: "icon-feature-group" },
 
               createElement(SelectControl, {
                 value: comp.leftIcon,
@@ -124,6 +134,13 @@
                 className: "feature-textarea"
               })
             ),
+
+            createElement("div", { className: "icon-feature-group" },
+
+              createElement("h3", { className: "text-center" }, __(" VS ", "custom-blocks"))
+
+            ),
+
             createElement("div", { className: "icon-feature-group" },
 
               createElement(SelectControl, {

@@ -27,6 +27,7 @@ class Versus extends Basic {
                     'type'    => 'array',
                     'default' => [
                         [
+                            'label'  => 'Property',
                             'leftIcon'  => 'fas fa-check',
                             'leftText'  => 'Feature A',
                             'rightIcon' => 'fas fa-times',
@@ -65,10 +66,12 @@ class Versus extends Basic {
     private function renderSubItem(array $comparison): string {
         return sprintf(
             '<tr>
+                <td><strong>%s</strong></td>
                 <td><strong><i class="%s"></i> %s</strong></td>
                 <td><strong>VS</strong></td>
                 <td><strong><i class="%s"></i> %s</strong></td>
             </tr>',
+            esc_html($comparison['label'] ?? ''),
             esc_attr($comparison['leftIcon']), esc_html($comparison['leftText']),
             esc_attr($comparison['rightIcon']), esc_html($comparison['rightText'])
         );
