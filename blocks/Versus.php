@@ -5,13 +5,13 @@ namespace TwentytwentyfiveChild\Blocks;
 class Versus extends Basic {
 
     protected string $dir = 'versus';
-
+    const FA_VERSION = '5.15.4';
     public function __construct() {
         add_action("init", [$this, "registerBlock"]);
     }
 
     public function registerFontAwesomeCdn() {
-        wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4');
+        wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/'.static::FA_VERSION.'/css/all.min.css', array(), static::FA_VERSION);
     }
     public function registerBlock($callback = null): void {
 
