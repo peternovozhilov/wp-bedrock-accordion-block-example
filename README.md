@@ -15,7 +15,7 @@ This repository contains the definition of a **TwentyTwentyFive Child Theme** wi
 
 - **Child Theme**:
   - Extends the functionality of the TwentyTwentyFive theme.
-  - Define additional custom settings
+  - Extends additional custom settings
   - Optimized for modern WordPress development with Bedrock.
 
 ---
